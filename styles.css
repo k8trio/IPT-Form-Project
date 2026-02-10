@@ -9,7 +9,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* GENERAL RESET */
+
 * {
     margin: 0;
     padding: 0;
@@ -17,13 +17,13 @@
     font-family: Arial, sans-serif;
 }
 
-/* PAGE BACKGROUND */
+
 body {
     background: #f4f4f4;
     padding: 20px;
 }
 
-/* MAIN CONTAINER */
+
 .container {
     max-width: 1000px;
     margin: auto;
@@ -33,14 +33,14 @@ body {
     box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
 }
 
-/* HEADER */
+
 .header h1 {
     text-align: center;
     margin-bottom: 20px;
     font-size: 32px;
 }
 
-/* FORM HEADER */
+
 .cv-header {
     display: flex;
     gap: 20px;
@@ -48,12 +48,12 @@ body {
     margin-bottom: 30px;
 }
 
-/* PROFILE PIC */
+
 .profile-pic input {
     width: 120px;
 }
 
-/* HEADER TEXT */
+
 .header-text input {
     width: 100%;
     padding: 10px;
@@ -61,26 +61,27 @@ body {
     font-size: 16px;
 }
 
-/* BODY COLUMNS */
+
+
 .cv-body {
     display: flex;
     gap: 20px;
 }
 
-/* LEFT + RIGHT */
+
 .left-column,
 .right-column {
     flex: 1;
 }
 
-/* TITLES */
+
 h2 {
     margin: 15px 0 8px;
     font-size: 18px;
     color: #333;
 }
 
-/* INPUTS + TEXTAREA */
+
 input, textarea {
     width: 100%;
     padding: 10px;
@@ -89,13 +90,13 @@ input, textarea {
     border-radius: 8px;
 }
 
-/* TEXTAREA SIZE */
+
 textarea {
     resize: none;
     height: 80px;
 }
 
-/* BUTTON */
+
 button {
     width: 100%;
     padding: 12px;
@@ -111,7 +112,7 @@ button:hover {
     background: #0056b3;
 }
 
-/* ✅ RESPONSIVE DESIGN */
+
 @media (max-width: 768px) {
 
     .cv-header {
