@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Maker</title>
+    <title>Curriculum Vitae</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Curriculum Vitae Maker</h1>
+            <h1>Curriculum Vitae</h1>
         </div>
         <div class="contents">
             <!-- ditech na magstart yung sa form -->
@@ -23,13 +24,46 @@
                 <label for="email">Full Name</label>
                 <input type="email" id="email" required>
             </div>
-            <div class="form-group">
-                <label for="fullName">Full Name</label>
-                <input type="name" id="fullName" required>
+
+            <!-- CV Body -->
+            <div class="cv-body">
+
+                <!-- Left Column -->
+                <div class="left-column">
+                    <h2>PROFILE</h2>
+                    <textarea id="profile" placeholder="Tell about yourself"></textarea>
+
+                    <h2>SKILLS</h2>
+                    <input type="text" id="skills" placeholder="e.g. cooking, baking, web design">
+
+                    <h2>LANGUAGE</h2>
+                    <input type="text" id="languages" placeholder="e.g. Japanese, Spanish">
+
+                    <h2>INTEREST</h2>
+                    <textarea id="interests" placeholder="Your interests"></textarea>
+                </div>
+
+                <!-- Right Column -->
+                <div class="right-column">
+                    <h2>EDUCATION</h2>
+                    <input type="text" id="school" placeholder="School name">
+                    <input type="text" id="eduYears" placeholder="Years (e.g. 1990 - 2027)">
+
+                    <h2>EXPERIENCE</h2>
+                    <input type="text" id="jobPosition" placeholder="Job position">
+                    <input type="text" id="workYears" placeholder="Years (e.g. 2018 - 2019)">
+
+                    <h2>ACHIEVEMENT</h2>
+                    <textarea id="achievements" placeholder="Your achievements"></textarea>
+                </div>
+
             </div>
-            <!--WAAAAAAAAAAAAAAAITTTTTT-->
-        </div>
-        </div>
+
+            <button type="submit">Save CV</button>
+
+        </form>
     </div>
+</div>
+
 </body>
 </html>
