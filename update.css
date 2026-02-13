@@ -13,38 +13,32 @@ body {
     max-width: 1000px;
     margin: 40px auto;
     background: #fff;
-    padding: 25px 35px;
-    border-radius: 15px;
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    padding: 30px 40px;
+    border-radius: 18px;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.15);
 }
 
-/* header wrapper */
+/* header wrapper (center na ngayon) */
 header {
-    position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
-    text-align: center;
 }
 
 /* title sa header */
 header h1 {
-    font-size: 30px;
-    margin-bottom: 20px;
-
+    font-size: 28px;
+    margin: 0;
     color: #1a3a52;
+    font-weight: bold;
 }
 
-/* back button */
+/* back button (nasa ilalim na ng title) */
 .back-btn {
-    position: absolute;
-    right: 0;
     text-decoration: none;
     background: #1a3a52;
     color: white;
-    margin-top: 55px;
-    margin-right: 20px;
     padding: 10px 18px;
     border-radius: 8px;
     font-size: 14px;
@@ -59,8 +53,8 @@ header h1 {
 /* bawat section ng form */
 .form-section {
     margin-bottom: 30px;
-    padding: 20px;
-    border-radius: 12px;
+    padding: 22px;
+    border-radius: 14px;
     background: #f9fafc;
     border: 1px solid #ddd;
 }
@@ -70,7 +64,7 @@ header h1 {
     margin-top: 0;
     font-size: 20px;
     color: #1a3a52;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 #currentImagePreview {
@@ -81,7 +75,7 @@ header h1 {
 .form-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 18px;
 }
 
 /* full width input sa grid */
@@ -100,14 +94,15 @@ header h1 {
     font-weight: bold;
     margin-bottom: 6px;
     font-size: 14px;
+    color: #222;
 }
 
 /* input at textarea style */
 .form-group input,
 .form-group textarea {
-    padding: 10px;
+    padding: 11px;
     border: 1px solid #bbb;
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 14px;
     outline: none;
     transition: 0.3s;
@@ -117,41 +112,45 @@ header h1 {
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: #1a3a52;
-    box-shadow: 0px 0px 5px rgba(26, 58, 82, 0.4);
+    box-shadow: 0px 0px 6px rgba(26, 58, 82, 0.35);
 }
 
 /* file input style */
 .file-input {
-    padding: 8px;
+    padding: 10px;
     background: white;
-    border-radius: 8px;
+    border-radius: 10px;
+    border: 1px solid #bbb;
 }
 
 /* image preview */
 #imagePreview img {
-    margin-top: 10px;
+    margin-top: 12px;
     border: 2px solid #1a3a52;
-    padding: 5px;
-    border-radius: 8px;
+    padding: 6px;
+    border-radius: 10px;
+    max-width: 150px;
 }
 
 /* color selector wrapper */
 .color-selector {
     margin-bottom: 25px;
-    padding: 15px;
-    border-radius: 12px;
+    padding: 18px;
+    border-radius: 14px;
     background: #eef3f7;
 }
 
 /* heading ng color selector */
 .color-selector h3 {
-    margin: 0 0 20px;
+    margin: 0 0 12px;
     color: #1a3a52;
+    font-size: 18px;
 }
 
 /* container ng color options */
 .color-options {
     display: flex;
+    justify-content: space-around;
     gap: 20px;
     width: 100%;
     justify-content: space-around;
@@ -161,37 +160,23 @@ header h1 {
 .color-option {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     cursor: pointer;
-    flex: 1;
-    justify-content: center;
 }
 
-/* hide radio input */
-.color-option input[type="radio"] {
-    display: none;
-}
-
-/* expand color preview when checked */
-.color-option input[type="radio"]:checked+.color-preview {
-    width: 80px;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
-}
-
-/* color preview dot */
+/* color preview bar */
 .color-preview {
-    width: 50px;
+    width: 20px;
     height: 20px;
-    border-radius: 50px;
+    border-radius: 50%;
     border: 2px solid #333;
-    transition: width 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* dynamic entry wrapper */
 .dynamic-entry {
     margin-bottom: 15px;
-    padding: 15px;
-    border-radius: 10px;
+    padding: 16px;
+    border-radius: 12px;
     background: #fff;
     border: 1px solid #ddd;
 }
@@ -199,11 +184,11 @@ header h1 {
 /* button para mag-add ng entry */
 .add-more-btn {
     margin-top: 10px;
-    background: #1a3a52;
+    background: #2d4a3e;
     color: white;
     border: none;
-    padding: 10px 18px;
-    border-radius: 8px;
+    padding: 11px 18px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 14px;
     transition: 0.3s;
@@ -211,7 +196,7 @@ header h1 {
 
 /* hover effect add button */
 .add-more-btn:hover {
-    background: #143044;
+    background: #22372e;
 }
 
 /* button para mag-remove ng entry */
@@ -220,8 +205,8 @@ header h1 {
     background: crimson;
     color: white;
     border: none;
-    padding: 8px 15px;
-    border-radius: 8px;
+    padding: 9px 15px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 13px;
     transition: 0.3s;
@@ -236,17 +221,14 @@ header h1 {
 .save-btn {
     max-width: 250px;
     width: 100%;
-    margin: 0 auto;
-    display: block;
-    padding: 12px 24px;
+    padding: 14px;
     font-size: 16px;
     border: none;
     border-radius: 10px;
-    background: #4caf50;
+    background: #1a3a52;
     color: white;
     cursor: pointer;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
 }
 
 /* hover effect save button */
@@ -266,14 +248,12 @@ header h1 {
         grid-column: span 1;
     }
 
-    header {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
+    header h1 {
+        font-size: 24px;
     }
 
     .color-options {
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
     }
 }
