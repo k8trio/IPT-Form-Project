@@ -1,0 +1,43 @@
+body {
+    background: #f4f6f9;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.cv-preview-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.cv-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+}
+
+.update-btn {
+    background: #2d4a3e;
+}
+
+.delete-btn {
+    background: #c0392b;
+}
+
+.download-btn {
+    background: #1a3a52;
+}

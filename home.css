@@ -1,0 +1,176 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px 80px;
+    box-sizing: border-box;
+}
+
+header {
+    background: #1a66b3;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    color: white;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    text-align: center;
+}
+
+.subtitle {
+    margin-top: 5px;
+    font-size: 15px;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.search-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.search-wrapper {
+    display: flex;
+    flex: 1;
+    max-width: 1000px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #1a66b3;
+    border-radius: 6px 0 0 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+.search-btn {
+    padding: 12px 18px;
+    border: none;
+    background: #1a66b3;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 0 6px 6px 0;
+    transition: 0.3s;
+}
+
+.search-btn:hover {
+    background: #14508c;
+}
+
+.create-btn {
+    text-decoration: none;
+    background: #2e8b2e;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.create-btn:hover {
+    background: #246d24;
+}
+
+.cv-list-container {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.cv-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border: 2px solid #ddd;
+}
+
+.cv-table thead {
+    background: orange;
+    color: white;
+    font-weight: bold;
+}
+
+.cv-table th,
+.cv-table td {
+    padding: 15px;
+    text-align: left;
+    font-size: 15px;
+}
+
+.cv-table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.cv-table tbody tr:hover {
+    background: #f9f9f9;
+}
+
+.name-cell {
+    font-weight: bold;
+}
+
+.view-btn {
+    text-decoration: none;
+    background: #1a66b3;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.view-btn:hover {
+    background: #14508c;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 50px;
+}
+
+.empty-message p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.empty-hint {
+    font-size: 14px;
+    color: gray;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .search-bar-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-wrapper {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .create-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
