@@ -1,44 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Generator</title>
-    <!--<link rel="stylesheet" href="styles.css"> Diana, tanggalin mo na lang itong comment if icoconnect mo na yung CSS file mo. if iba name, edit mo na lang -->
-<body>
-    <div class="container">
-        <header>
-            <div>
-                <h1>Curriculum Vitae Maker</h1>
-                <p class="subtitle">Show them what you've got!</p>
-            </div>
-        </header>
-
-        <div class="search-bar-container">
-            <div class="search-wrapper">
-                <input type="text" id="searchInput" placeholder="Search by name" class="search-input">
-                <button class="search-btn" onclick="searchCV()">Search</button>
-            </div>
-            <a href="create.html" class="create-btn">Create New CV</a>
-        </div>
-
-        <div class="cv-list-container">
-            <table class="cv-table">
-                <thead>
-                    <tr>
-                        <th>No.</th>
-                        <th>Full Name</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody id="cvTableBody">
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <script>
-        // for this part, sa local storage muna to. this is json scripting. Justine, if icoconnet mo naman na sa XAMPP database 
+// for this part, sa local storage muna to. this is json scripting. Justine, if icoconnet mo naman na sa XAMPP database 
         //ito, pwede mo i delete tong script part. pag may errors, sabihan mo ako
         // i'll  convert them into PHP na lang para di u mahiraparnch
         function loadCVList() {
@@ -91,7 +51,3 @@
         document.getElementById('searchInput').addEventListener('input', searchCV);
         //line 92-93(can also delete this one)
         window.onload = loadCVList;
-    </script>
-    
-</body>
-</html>
