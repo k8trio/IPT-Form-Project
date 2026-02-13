@@ -387,12 +387,24 @@ header h1 {
 }
 
 /* cancel button */
-.cancel-btn { background: #718096; color: white; }
-.cancel-btn:hover { background: #4a5568; }
+.cancel-btn { 
+    background: #718096; 
+    color: white; 
+}
+
+.cancel-btn:hover { 
+    background: #4a5568; 
+}
 
 /* confirm button */
-.confirm-btn { background: #e53e3e; color: white; }
-.confirm-btn:hover { background: #c53030; }
+.confirm-btn { 
+    background: #e53e3e; 
+    color: white; 
+}
+
+.confirm-btn:hover { 
+    background: #c53030; 
+}
 
 /* responsive layout */
 @media (max-width: 900px) {
