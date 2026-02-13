@@ -1,20 +1,24 @@
+//view.js
+
 let currentCV = null;
 let currentId = null;
 
-window.onload = function() {
+window.onload = function () {
     const urlParams = new URLSearchParams(window.location.search);
     currentId = parseInt(urlParams.get('id'));
-    
-    const cvList = JSON.parse(localStorage.getItem('cvList') || '[]');
-    currentCV = cvList.find(cv => cv.id === currentId);
-    
-    if (!currentCV) {
-        alert('CV not found!');
-        window.location.href = 'index.html';
-        return;
-    }
-    
-    displayCV(currentCV);
+
+    fetch(`cv_operations.php?id=${currentId}`)
+        .then(response => response.json())
+        .then(cv => {
+            if (cv.error) {
+                alert('CV not found!');
+                window.location.href = 'index.html';
+                return;
+            }
+            currentCV = cv;
+            displayCV(currentCV);
+        })
+        .catch(error => console.error('Error loading CV:', error));
 };
 
 function displayCV(cv) {
@@ -55,7 +59,8 @@ function displayCV(cv) {
     // About
     const aboutSection = document.getElementById('aboutSection');
     if (cv.aboutMe) {
-        aboutSection.innerHTML = `<h2 class="cv-content-title"><span class="title-icon">About Me</span></h2><p class="cv-about-text">${cv.aboutMe}</p>`;
+        const formattedAbout = cv.aboutMe.replace(/\n/g, '<br>');
+        aboutSection.innerHTML = `<h2 class="cv-content-title"><span class="title-icon">About Me</span></h2><p class="cv-about-text">${formattedAbout}</p>`;
         aboutSection.style.display = 'block';
     } else aboutSection.style.display = 'none';
 
@@ -77,11 +82,8 @@ function displayCV(cv) {
         cv.experience.forEach(exp => {
             expHTML += `<div class="cv-entry"><div class="entry-header"><div><h3 class="entry-company">${exp.company}</h3><span class="entry-date">${exp.startYear} - ${exp.endYear}</span></div></div><p class="entry-job-title">${exp.jobTitle}</p>`;
             if (exp.description) {
-                expHTML += '<ul class="entry-description">';
-                exp.description.split('\n').forEach(desc => {
-                    if (desc.trim()) expHTML += `<li>${desc}</li>`;
-                });
-                expHTML += '</ul>';
+                const formattedDesc = exp.description.replace(/\n/g, '<br>');
+                expHTML += `<p class="entry-description">${formattedDesc}</p>`;
             }
             expHTML += '</div>';
         });
@@ -92,21 +94,32 @@ function displayCV(cv) {
 
 // Actions
 function updateCV() {
-    showDialog('Update CV','Do you want to update this CV?', () => window.location.href = `update.html?id=${currentId}`);
+    showDialog('Update CV', 'Do you want to update this CV?', () => window.location.href = `update.html?id=${currentId}`);
 }
 
 function deleteCV() {
-    showDialog('Delete CV','Are you sure you want to delete this CV? This action cannot be undone.', () => {
-        let cvList = JSON.parse(localStorage.getItem('cvList') || '[]');
-        cvList = cvList.filter(cv => cv.id !== currentId);
-        localStorage.setItem('cvList', JSON.stringify(cvList));
-        alert('CV deleted successfully!');
-        window.location.href = 'index.html';
+    showDialog('Delete CV', 'Are you sure you want to delete this CV? This action cannot be undone.', () => {
+        fetch(`cv_operations.php?id=${currentId}`, {
+            method: 'DELETE'
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('CV deleted successfully!');
+                    window.location.href = 'index.html';
+                } else {
+                    alert('Error deleting CV: ' + (data.error || 'Unknown error'));
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while deleting the CV.');
+            });
     });
 }
 
 function downloadCV() {
-    showDialog('Download CV','Download this CV as an HTML file?', () => {
+    showDialog('Download CV', 'Download this CV as an HTML file?', () => {
         const cvHTML = document.getElementById('cvPreview').outerHTML;
         const fullHTML = `<!DOCTYPE html>
 <html lang="en">
@@ -121,7 +134,7 @@ function downloadCV() {
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = `CV_${currentCV.fullName.replace(/\s+/g,'_')}.html`;
+        a.download = `CV_${currentCV.fullName.replace(/\s+/g, '_')}.html`;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
@@ -170,16 +183,16 @@ function getCVStyles() {
 }
 
 // Dialog
-function showDialog(title,message,confirmCallback){
-    document.getElementById('dialogTitle').textContent=title;
-    document.getElementById('dialogMessage').textContent=message;
-    document.getElementById('confirmDialog').style.display='flex';
+function showDialog(title, message, confirmCallback) {
+    document.getElementById('dialogTitle').textContent = title;
+    document.getElementById('dialogMessage').textContent = message;
+    document.getElementById('confirmDialog').style.display = 'flex';
     document.getElementById('confirmBtn').onclick = () => {
         closeDialog();
         confirmCallback();
     };
 }
 
-function closeDialog(){
-    document.getElementById('confirmDialog').style.display='none';
+function closeDialog() {
+    document.getElementById('confirmDialog').style.display = 'none';
 }
