@@ -1,176 +1,162 @@
+/*overall style ng buong page */
 body {
-    margin: 0;
-    padding: 0;
     font-family: Arial, sans-serif;
     background: #f4f6f9;
+    margin: 0;
+    padding: 0;
     color: #333;
 }
 
+/*main box na pinaglalagyan ng content */
 .container {
-    width: 100%;
-    min-height: 100vh;
-    padding: 40px 80px;
-    box-sizing: border-box;
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid #000000;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
 }
 
+/* title area sa taas */
 header {
-    background: #1a66b3;
-    padding: 25px;
-    border-radius: 8px;
-    margin-bottom: 25px;
-    color: white;
     text-align: center;
+    background: #ff9800;
+    padding: 25px;
+    border-radius: 12px;
+    color: white;
 }
 
+/* main title text */
 header h1 {
     margin: 0;
     font-size: 32px;
-    text-align: center;
 }
 
+/* small text sa ilalim ng title */
 .subtitle {
-    margin-top: 5px;
-    font-size: 15px;
-    opacity: 0.9;
-    text-align: center;
+    margin-top: 8px;
+    font-size: 16px;
+    font-style: italic;
 }
 
+/* area ng search at create button */
 .search-bar-container {
+    margin: 25px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
+    flex-wrap: nowrap;
     gap: 15px;
-    flex-wrap: wrap;
 }
 
+/* wrapper ng input + search button */
 .search-wrapper {
     display: flex;
     flex: 1;
-    max-width: 1000px;
 }
 
+/* textbox para sa search */
 .search-input {
-    flex: 1;
-    padding: 12px;
-    border: 2px solid #1a66b3;
-    border-radius: 6px 0 0 6px;
-    font-size: 14px;
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #ccc;
+    border-radius: 8px 0 0 8px;
+    font-size: 16px;
     outline: none;
 }
 
+/* effect pag naka-click sa input */
+.search-input:focus {
+    border-color: #2196f3;
+}
+
+/* blue button for searching */
 .search-btn {
-    padding: 12px 18px;
+    padding: 14px 25px;
     border: none;
-    background: #1a66b3;
+    background: #2196f3;
     color: white;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 8px 8px 0;
     transition: 0.3s;
 }
 
+/* hover effect ng search button */
 .search-btn:hover {
-    background: #14508c;
+    background: #1976d2;
 }
 
+/* green button for creating new CV */
 .create-btn {
-    text-decoration: none;
-    background: #2e8b2e;
+    padding: 14px 25px;
+    background: #4caf50;
     color: white;
-    padding: 12px 20px;
-    border-radius: 6px;
-    font-size: 14px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 8px;
     transition: 0.3s;
+    white-space: nowrap;
 }
 
+/* hover effect ng create button */
 .create-btn:hover {
-    background: #246d24;
+    background: #388e3c;
 }
 
+/* container ng table list */
 .cv-list-container {
     margin-top: 20px;
     overflow-x: auto;
 }
 
+/* main table design */
 .cv-table {
     width: 100%;
     border-collapse: collapse;
-    background: white;
-    border: 2px solid #ddd;
+    font-size: 16px;
+    border: 2px solid #000000;
 }
 
+/* button sa Action column */
+.view-btn {
+    padding: 8px 15px;
+    background: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+/* header row ng table */
 .cv-table thead {
     background: orange;
-    color: white;
-    font-weight: bold;
+    color: black;
 }
 
+/* style ng table cells */
 .cv-table th,
 .cv-table td {
-    padding: 15px;
+    padding: 14px;
     text-align: left;
-    font-size: 15px;
+    border: 1px solid #000000;
 }
 
-.cv-table tbody tr {
-    border-bottom: 1px solid #ddd;
-}
-
-.cv-table tbody tr:hover {
-    background: #f9f9f9;
-}
-
-.name-cell {
-    font-weight: bold;
-}
-
-.view-btn {
-    text-decoration: none;
-    background: #1a66b3;
-    color: white;
-    padding: 8px 14px;
-    border-radius: 6px;
-    font-size: 13px;
-    transition: 0.3s;
-}
-
+/* hover effect ng view button */
 .view-btn:hover {
-    background: #14508c;
+    background: #1976d2;
+    cursor: pointer;
 }
 
-.empty-state {
+/* centering ng No. at Action column */
+.cv-table th:nth-child(1),
+.cv-table td:nth-child(1),
+.cv-table th:nth-child(2),
+.cv-table th:nth-child(3),
+.cv-table td:nth-child(3) {
     text-align: center;
-    padding: 50px;
-}
-
-.empty-message p {
-    margin: 5px 0;
-    font-size: 16px;
-}
-
-.empty-hint {
-    font-size: 14px;
-    color: gray;
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 20px;
-    }
-
-    .search-bar-container {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .search-wrapper {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .create-btn {
-        width: 100%;
-        text-align: center;
-    }
 }
