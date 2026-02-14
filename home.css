@@ -130,6 +130,7 @@ header h1 {
     font-size: 14px;
     transition: 0.3s;
     text-align: center;
+    text-decoration: none;
 }
 
 /* header row ng table */
