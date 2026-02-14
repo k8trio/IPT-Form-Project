@@ -1,9 +1,9 @@
 --use 3307 port in XAMPP and mysql connection(mysql workbench)
 
-CREATE DATABASE IF NOT EXISTS cv_db;
+CREATE DATABASE cv_db;
 USE cv_db;
 
-CREATE TABLE IF NOT EXISTS cv_general_info (
+CREATE TABLE cv_general_info (
     id INT AUTO_INCREMENT PRIMARY KEY,
     full_name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS cv_general_info (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS cv_education (
+CREATE TABLE cv_education (
     id INT AUTO_INCREMENT PRIMARY KEY,
     cv_id INT NOT NULL,
     degree VARCHAR(255),
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS cv_education (
     FOREIGN KEY (cv_id) REFERENCES cv_general_info(id) ON DELETE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS cv_experience (
+CREATE TABLE cv_experience (
     id INT AUTO_INCREMENT PRIMARY KEY,
     cv_id INT NOT NULL,
     job_title VARCHAR(255),
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS cv_experience (
     FOREIGN KEY (cv_id) REFERENCES cv_general_info(id) ON DELETE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS cv_skills (
+CREATE TABLE cv_skills (
     id INT AUTO_INCREMENT PRIMARY KEY,
     cv_id INT NOT NULL,
     skill_name VARCHAR(255),
