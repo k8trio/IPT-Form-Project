@@ -1,7 +1,7 @@
 /* body ng page */
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #e0e0e0;
     margin: 0;
     padding: 0;
     color: #333;
@@ -12,10 +12,11 @@ body {
     width: 90%;
     max-width: 1000px;
     margin: 40px auto;
-    background: #fff;
-    padding: 25px 35px;
-    border-radius: 15px;
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    background: #e0e0e0;
+    padding: 40px;
+    border-radius: 40px;
+    box-shadow: 20px 20px 60px #bebebe,
+        -20px -20px 60px #ffffff;
 }
 
 /* header section */
@@ -24,44 +25,60 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     text-align: center;
+    background: #e0e0e0;
+    padding: 25px;
+    border-radius: 30px;
+    box-shadow: inset 8px 8px 16px #bebebe,
+        inset -8px -8px 16px #ffffff;
 }
 
 /* title sa header */
 header h1 {
     font-size: 30px;
-    margin-bottom: 20px;
-
-    color: #1a3a52;
+    margin: 0;
+    background: linear-gradient(145deg, #1a3a52, #2d5a7a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
 }
 
 /* back button */
 .back-btn {
     position: absolute;
-    right: 0;
+    right: 20px;
     text-decoration: none;
-    background: #1a3a52;
-    color: white;
-    margin-top: 55px;
-    margin-right: 20px;
-    padding: 10px 18px;
-    border-radius: 8px;
+    background: #e0e0e0;
+    color: #1a3a52;
+    padding: 12px 24px;
+    border-radius: 15px;
     font-size: 14px;
-    transition: 0.3s;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 6px 6px 12px #bebebe,
+        -6px -6px 12px #ffffff;
 }
 
 .back-btn:hover {
-    background: #143044;
+    box-shadow: inset 6px 6px 12px #bebebe,
+        inset -6px -6px 12px #ffffff;
+}
+
+.back-btn:active {
+    box-shadow: inset 4px 4px 8px #bebebe,
+        inset -4px -4px 8px #ffffff;
 }
 
 /* bawat section ng form */
 .form-section {
     margin-bottom: 30px;
-    padding: 20px;
-    border-radius: 12px;
-    background: #f9fafc;
-    border: 1px solid #ddd;
+    padding: 25px;
+    border-radius: 25px;
+    background: #e0e0e0;
+    box-shadow: 8px 8px 16px #bebebe,
+        -8px -8px 16px #ffffff;
 }
 
 /* heading ng section */
@@ -69,7 +86,8 @@ header h1 {
     margin-top: 0;
     font-size: 20px;
     color: #1a3a52;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
 /* grid layout ng form fields */
@@ -92,55 +110,75 @@ header h1 {
 
 /* label ng input */
 .form-group label {
-    font-weight: bold;
-    margin-bottom: 6px;
+    font-weight: 600;
+    margin-bottom: 8px;
     font-size: 14px;
+    color: #555;
 }
 
 /* style ng input at textarea */
 .form-group input,
 .form-group textarea {
-    padding: 10px;
-    border: 1px solid #bbb;
-    border-radius: 8px;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 12px;
     font-size: 14px;
     outline: none;
-    transition: 0.3s;
+    transition: all 0.3s;
+    background: #e0e0e0;
+    box-shadow: inset 4px 4px 8px #bebebe,
+        inset -4px -4px 8px #ffffff;
+    color: #333;
 }
 
 /* focus effect sa input/textarea */
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: #1a3a52;
-    box-shadow: 0px 0px 5px rgba(26, 58, 82, 0.4);
+    box-shadow: inset 6px 6px 12px #bebebe,
+        inset -6px -6px 12px #ffffff;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999;
 }
 
 /* file input style */
 .file-input {
-    padding: 8px;
-    background: white;
-    border-radius: 8px;
+    padding: 12px;
+    background: #e0e0e0;
+    border-radius: 12px;
+    box-shadow: inset 4px 4px 8px #bebebe,
+        inset -4px -4px 8px #ffffff;
+    cursor: pointer;
 }
 
 /* image preview sa form */
 #imagePreview img {
-    margin-top: 10px;
-    border: 2px solid #1a3a52;
-    padding: 5px;
+    margin-top: 15px;
+    border-radius: 15px;
+    padding: 8px;
+    background: #e0e0e0;
+    box-shadow: 6px 6px 12px #bebebe,
+        -6px -6px 12px #ffffff;
 }
 
 /* color selector section */
 .color-selector {
-    margin-bottom: 25px;
-    padding: 15px;
-    border-radius: 12px;
-    background: #eef3f7;
+    margin-bottom: 30px;
+    padding: 25px;
+    border-radius: 25px;
+    background: #e0e0e0;
+    box-shadow: 8px 8px 16px #bebebe,
+        -8px -8px 16px #ffffff;
 }
 
 /* heading ng color selector */
 .color-selector h3 {
     margin: 0 0 20px;
     color: #1a3a52;
+    font-weight: 700;
+    font-size: 18px;
 }
 
 /* container ng color options */
@@ -159,15 +197,16 @@ header h1 {
     cursor: pointer;
     flex: 1;
     justify-content: center;
+    padding: 12px;
+    border-radius: 15px;
+    background: #e0e0e0;
+    transition: all 0.3s;
 }
+
 
 /* hide radio input */
 .color-option input[type="radio"] {
     display: none;
-}
-
-.color-options:hover {
-    cursor: pointer;
 }
 
 /* expand color preview when checked */
@@ -185,74 +224,111 @@ header h1 {
     transition: width 0.3s ease, box-shadow 0.3s ease;
 }
 
+.color-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+}
+
 /* wrapper ng dynamic entry */
 .dynamic-entry {
     margin-bottom: 15px;
-    padding: 15px;
-    border-radius: 10px;
-    background: #fff;
-    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 20px;
+    background: #e0e0e0;
+    box-shadow: inset 4px 4px 8px #bebebe,
+        inset -4px -4px 8px #ffffff;
 }
 
 /* button para mag-add ng bagong entry */
 .add-more-btn {
-    margin-top: 10px;
-    background: #1a3a52;
-    color: white;
+    margin-top: 15px;
+    background: #e0e0e0;
+    color: #1a3a52;
     border: none;
-    padding: 10px 18px;
-    border-radius: 8px;
+    padding: 12px 24px;
+    border-radius: 15px;
     cursor: pointer;
     font-size: 14px;
-    transition: 0.3s;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 6px 6px 12px #bebebe,
+        -6px -6px 12px #ffffff;
 }
 
 .add-more-btn:hover {
-    background: #143044;
+    box-shadow: inset 6px 6px 12px #bebebe,
+        inset -6px -6px 12px #ffffff;
+}
+
+.add-more-btn:active {
+    box-shadow: inset 4px 4px 8px #bebebe,
+        inset -4px -4px 8px #ffffff;
 }
 
 /* button para mag-remove ng entry */
 .remove-btn {
     margin-top: 10px;
-    background: crimson;
-    color: white;
+    background: #e0e0e0;
+    color: #e53e3e;
     border: none;
-    padding: 8px 15px;
-    border-radius: 8px;
+    padding: 10px 20px;
+    border-radius: 12px;
     cursor: pointer;
     font-size: 13px;
-    transition: 0.3s;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 4px 4px 8px #bebebe,
+        -4px -4px 8px #ffffff;
 }
 
 .remove-btn:hover {
-    background: darkred;
+    box-shadow: inset 4px 4px 8px #bebebe,
+        inset -4px -4px 8px #ffffff;
+}
+
+.remove-btn:active {
+    box-shadow: inset 3px 3px 6px #bebebe,
+        inset -3px -3px 6px #ffffff;
 }
 
 /* save button sa form */
 .save-btn {
     max-width: 250px;
     width: 100%;
-    margin: 0 auto;
+    margin: 20px auto;
     display: block;
-    padding: 12px 24px;
+    padding: 16px 32px;
     font-size: 16px;
+    font-weight: 700;
     border: none;
-    border-radius: 10px;
-    background: #4caf50;
-    color: white;
+    border-radius: 15px;
+    background: #e0e0e0;
+    color: #4caf50;
     cursor: pointer;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    box-shadow: 8px 8px 16px #bebebe,
+        -8px -8px 16px #ffffff;
 }
 
 .save-btn:hover {
-    background: #388e3c;
-    box-shadow: 0 0 20px rgba(76, 175, 80, 0.6), 0 0 40px rgba(76, 175, 80, 0.4);
-    transform: translateY(-2px);
+    box-shadow: inset 8px 8px 16px #bebebe,
+        inset -8px -8px 16px #ffffff;
+}
+
+.save-btn:active {
+    box-shadow: inset 6px 6px 12px #bebebe,
+        inset -6px -6px 12px #ffffff;
 }
 
 /* responsive layout */
 @media (max-width: 768px) {
+    .container {
+        margin: 20px auto;
+        padding: 25px;
+        border-radius: 30px;
+    }
+
     .form-grid {
         grid-template-columns: 1fr;
     }
@@ -265,10 +341,21 @@ header h1 {
         flex-direction: column;
         gap: 15px;
         text-align: center;
+        padding: 20px;
+    }
+
+    .back-btn {
+        position: static;
+        width: 100%;
+        text-align: center;
     }
 
     .color-options {
         flex-direction: column;
         gap: 10px;
+    }
+
+    .form-section {
+        padding: 20px;
     }
 }

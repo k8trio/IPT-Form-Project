@@ -1,7 +1,7 @@
 /*overall style ng buong page */
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #e0e0e0;
     margin: 0;
     padding: 0;
     color: #333;
@@ -11,153 +11,253 @@ body {
 .container {
     width: 90%;
     max-width: 1000px;
-    margin: 40px auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    border: 2px solid #000000;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.15), 0 0 20px rgba(0,0,0,0.1);
+    margin: 80px auto;
+    padding: 40px;
+    border-radius: 40px;
+    background: #e0e0e0;
+    box-shadow: 20px 20px 60px #bebebe,
+        -20px -20px 60px #ffffff;
 }
 
 /* title area sa taas */
 header {
     text-align: center;
-    background: #ff9800;
-    padding: 25px;
-    border-radius: 12px;
-    color: white;
+    background: #e0e0e0;
+    padding: 30px;
+    border-radius: 30px;
+    color: #333;
+    box-shadow: inset 8px 8px 16px #bebebe,
+        inset -8px -8px 16px #ffffff;
+    margin-bottom: 30px;
 }
 
 /* main title text */
 header h1 {
     margin: 0;
     font-size: 32px;
+    font-weight: 700;
+    background: linear-gradient(145deg, #7498b3, #02233d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 /* small text sa ilalim ng title */
 .subtitle {
-    margin-top: 8px;
+    margin-top: 12px;
     font-size: 16px;
     font-style: italic;
+    color: #666;
 }
 
 /* area ng search at create button */
 .search-bar-container {
-    margin: 25px 0;
+    margin: 30px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
-    gap: 15px;
+    gap: 20px;
 }
 
 /* wrapper ng input + search button */
 .search-wrapper {
     display: flex;
     flex: 1;
+    border-radius: 15px;
+    background: #e0e0e0;
+    box-shadow: inset 6px 6px 12px #bebebe,
+        inset -6px -6px 12px #ffffff;
+    overflow: hidden;
 }
 
 /* textbox para sa search */
 .search-input {
     width: 100%;
-    padding: 14px;
-    border: 2px solid #ccc;
-    border-radius: 8px 0 0 8px;
+    padding: 16px 20px;
+    border: none;
+    background: transparent;
     font-size: 16px;
     outline: none;
+    color: #333;
 }
 
-/* effect pag naka-click sa input */
-.search-input:focus {
-    border-color: #2196f3;
+.search-input::placeholder {
+    color: #999;
 }
 
 /* blue button for searching */
 .search-btn {
-    padding: 14px 25px;
+    padding: 16px 30px;
     border: none;
-    background: #2196f3;
-    color: white;
+    background: #e0e0e0;
+    color: #1a3a52;
     font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
-    border-radius: 0 8px 8px 0;
-    transition: 0.3s;
+    transition: all 0.3s;
+    box-shadow: 6px 6px 12px #bebebe,
+        -6px -6px 12px #ffffff;
 }
 
 /* hover effect ng search button */
 .search-btn:hover {
-    background: #1976d2;
+    box-shadow: inset 6px 6px 12px #bebebe,
+        inset -6px -6px 12px #ffffff;
+}
+
+.search-btn:active {
+    box-shadow: inset 4px 4px 8px #bebebe,
+        inset -4px -4px 8px #ffffff;
 }
 
 /* green button for creating new CV */
 .create-btn {
-    padding: 14px 25px;
-    background: #4caf50;
-    color: white;
+    padding: 16px 30px;
+    background: #e0e0e0;
+    color: #4caf50;
     text-decoration: none;
     font-size: 16px;
-    border-radius: 8px;
-    transition: 0.3s;
+    font-weight: 600;
+    border-radius: 15px;
+    transition: all 0.3s;
     white-space: nowrap;
+    box-shadow: 6px 6px 12px #bebebe,
+        -6px -6px 12px #ffffff;
+    display: inline-block;
 }
 
 /* hover effect ng create button */
 .create-btn:hover {
-    background: #388e3c;
+    box-shadow: inset 6px 6px 12px #bebebe,
+        inset -6px -6px 12px #ffffff;
+}
+
+.create-btn:active {
+    box-shadow: inset 4px 4px 8px #bebebe,
+        inset -4px -4px 8px #ffffff;
 }
 
 /* container ng table list */
 .cv-list-container {
-    margin-top: 20px;
+    margin-top: 30px;
     overflow-x: auto;
+    border-radius: 20px;
+    background: #e0e0e0;
+    padding: 20px;
+    box-shadow: inset 8px 8px 16px #bebebe,
+        inset -8px -8px 16px #ffffff;
 }
 
 /* main table design */
 .cv-table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0 10px;
     font-size: 16px;
-    border: 2px solid #000000;
+}
+
+/* header row ng table */
+.cv-table thead tr {
+    background: #e0e0e0;
+}
+
+.cv-table thead th {
+    padding: 16px;
+    text-align: left;
+    font-weight: 700;
+    color: #5d8aad;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+/* style ng table cells */
+.cv-table tbody tr {
+    background: #e0e0e0;
+    border-radius: 15px;
+    box-shadow: 6px 6px 12px #bebebe,
+        -6px -6px 12px #ffffff;
+    transition: all 0.3s;
+}
+
+.cv-table tbody tr:hover {
+    box-shadow: 8px 8px 16px #bebebe,
+        -8px -8px 16px #ffffff;
+    transform: translateY(-2px);
+}
+
+.cv-table td {
+    padding: 18px;
+    border: none;
+    color: #333;
+}
+
+.cv-table tbody tr td:first-child {
+    border-radius: 15px 0 0 15px;
+}
+
+.cv-table tbody tr td:last-child {
+    border-radius: 0 15px 15px 0;
 }
 
 /* button sa Action column */
 .view-btn {
-    padding: 8px 15px;
-    background: #2196f3;
-    color: white;
+    padding: 10px 20px;
+    background: #e0e0e0;
+    color: #5d8aad;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     font-size: 14px;
-    transition: 0.3s;
+    font-weight: 600;
+    transition: all 0.3s;
     text-align: center;
     text-decoration: none;
-}
-
-/* header row ng table */
-.cv-table thead {
-    background: orange;
-    color: black;
-}
-
-/* style ng table cells */
-.cv-table th,
-.cv-table td {
-    padding: 14px;
-    text-align: left;
-    border: 1px solid #000000;
+    display: inline-block;
+    box-shadow: 4px 4px 8px #bebebe,
+        -4px -4px 8px #ffffff;
 }
 
 /* hover effect ng view button */
 .view-btn:hover {
-    background: #1976d2;
     cursor: pointer;
+    box-shadow: inset 4px 4px 8px #bebebe,
+        inset -4px -4px 8px #ffffff;
+}
+
+.view-btn:active {
+    box-shadow: inset 3px 3px 6px #bebebe,
+        inset -3px -3px 6px #ffffff;
 }
 
 /* centering ng No. at Action column */
 .cv-table th:nth-child(1),
 .cv-table td:nth-child(1),
-.cv-table th:nth-child(2),
 .cv-table th:nth-child(3),
 .cv-table td:nth-child(3) {
     text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        margin: 40px auto;
+        padding: 25px;
+        border-radius: 30px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .search-bar-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .create-btn {
+        width: 100%;
+        text-align: center;
+    }
 }

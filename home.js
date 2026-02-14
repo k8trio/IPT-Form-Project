@@ -1,3 +1,4 @@
+//  home.js
 
 function loadCVList() {
     fetch('cv_operations.php')
