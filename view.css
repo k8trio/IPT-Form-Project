@@ -5,6 +5,7 @@
     max-width: 210mm;
     margin: 20px auto;
     padding: 20px;
+    padding-bottom: 80px; /* space para sa fixed bottom bar */
 }
 
 /* header ng page */
@@ -317,17 +318,20 @@ header h1 {
     white-space: pre-wrap;
 }
 
-/* container ng action buttons */
+/* fixed bottom bar para sa action buttons */
 .cv-actions {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
     display: flex;
-    /* flex para magkatabi ang buttons */
     justify-content: center;
-    /* center horizontally */
     align-items: center;
-    /* center vertically */
     gap: 15px;
-    /* space sa pagitan ng buttons */
-    margin-top: 20px;
+    padding: 15px;
+    z-index: 100;
 }
 
 /* general style ng buttons */
@@ -371,10 +375,13 @@ header h1 {
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 8px;
+  
     font-weight: 700;
     cursor: pointer;
     transition: 0.3s;
+    border-radius: 30px;
+    
+    box-shadow:  12px 12px 24px #bebebe, -12px -12px 24px #ffffff;
 }
 
 /* overlay ng popup */
@@ -454,7 +461,13 @@ header h1 {
     }
 
     .cv-actions {
-        flex-direction: column;
+        flex-direction: row;
         gap: 10px;
+        padding: 10px;
+    }
+    
+    .action-btn {
+        padding: 8px 15px;
+        font-size: 14px;
     }
 }
