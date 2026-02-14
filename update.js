@@ -22,6 +22,7 @@ window.onload = function () {
 
 function loadCVData(cv) {
     document.getElementById('fullName').value = cv.fullName || '';
+    document.getElementById('profession').value = cv.profession || '';
     document.getElementById('email').value = cv.email || '';
     document.getElementById('phone').value = cv.phone || '';
     document.getElementById('website').value = cv.website || '';
@@ -133,6 +134,7 @@ document.getElementById('cvForm').addEventListener('submit', function (e) {
     const updatedData = {
         id: currentId,
         fullName: document.getElementById('fullName').value,
+        profession: document.getElementById('profession').value,
         email: document.getElementById('email').value,
         phone: document.getElementById('phone').value,
         website: document.getElementById('website').value,

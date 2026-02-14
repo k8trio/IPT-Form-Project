@@ -98,6 +98,7 @@ document.getElementById('cvForm').addEventListener('submit', function (e) {
 
     const cvData = {
         fullName: document.getElementById('fullName').value,
+        profession: document.getElementById('profession').value,
         email: document.getElementById('email').value,
         phone: document.getElementById('phone').value,
         website: document.getElementById('website').value,

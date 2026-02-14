@@ -77,7 +77,7 @@ function handlePost($conn, $input)
     try {
         $conn->beginTransaction();
 
-        $sql = "INSERT INTO cv_general_info (full_name, email, phone, website, address, about_me, color_theme, profile_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO cv_general_info (full_name, email, phone, website, address, about_me, profession, color_theme, profile_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
         $stmt->execute([
             $input['fullName'],
@@ -86,6 +86,7 @@ function handlePost($conn, $input)
             $input['website'] ?? '',
             $input['address'] ?? '',
             $input['aboutMe'] ?? '',
+            $input['profession'] ?? '',
             $input['colorTheme'] ?? '#1a3a52',
             $input['profileImage'] ?? ''
         ]);
@@ -134,7 +135,7 @@ function handleUpdate($conn, $input)
     try {
         $conn->beginTransaction();
 
-        $sql = "UPDATE cv_general_info SET full_name=?, email=?, phone=?, website=?, address=?, about_me=?, color_theme=?, profile_image=? WHERE id=?";
+        $sql = "UPDATE cv_general_info SET full_name=?, email=?, phone=?, website=?, address=?, about_me=?, profession=?, color_theme=?, profile_image=? WHERE id=?";
         $stmt = $conn->prepare($sql);
         $stmt->execute([
             $input['fullName'],
@@ -143,6 +144,7 @@ function handleUpdate($conn, $input)
             $input['website'] ?? '',
             $input['address'] ?? '',
             $input['aboutMe'] ?? '',
+            $input['profession'] ?? '',
             $input['colorTheme'] ?? '#1a3a52',
             $input['profileImage'] ?? '',
             $cvId

@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS cv_general_info (
     website VARCHAR(255),
     address TEXT,
     about_me TEXT,
+    profession VARCHAR(255),
     color_theme VARCHAR(20) DEFAULT '#1a3a52',
     profile_image LONGTEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP

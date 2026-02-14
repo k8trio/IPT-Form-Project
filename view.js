@@ -24,7 +24,7 @@ window.onload = function () {
 function displayCV(cv) {
     document.getElementById('themeStyle').textContent = `:root { --cv-theme-color: ${cv.colorTheme}; }`;
     document.getElementById('cvName').textContent = cv.fullName;
-
+    document.getElementById('cvProfession').textContent = cv.profession || 'PROFESSIONAL';
     // Profile
     const profileSection = document.getElementById('profileSection');
     profileSection.innerHTML = cv.profileImage
