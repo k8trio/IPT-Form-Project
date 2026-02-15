@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$port = '3307'; //change this if needed (3306)
+$port = '3306'; //change this if needed (3306)
 $db_name = 'cv_db';
 $username = 'root';
 $password = '';
