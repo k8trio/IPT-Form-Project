@@ -1,4 +1,3 @@
---use 3307 port in XAMPP and mysql connection(mysql workbench)
 
 CREATE DATABASE cv_db;
 USE cv_db;
